@@ -1,0 +1,23 @@
+.breadcrumb-container {
+  display: flex;
+  justify-content: center; /* Qendërzon horizontalisht */
+  align-items: center; /* Qendërzon vertikalisht (opsionale) */
+  margin: 10px 0; /* Hapësirë sipas dëshirës lart dhe poshtë */
+  width: 100%; /* Sigurohu që zë të gjithë hapësirën horizontale */
+  
+}
+
+.content-container {
+  display: flex; /* Shfaq sidebar dhe main-content krah për krah */
+}
+
+.sidebar {
+  width: 25%; /* Pjesa e majtë (sidebar) */
+  padding: 10px;
+  border-right: 1px solid #ccc;
+}
+
+.main-content {
+  width: 75%; /* Pjesa e djathtë (main-content) */
+  padding: 10px;
+}
