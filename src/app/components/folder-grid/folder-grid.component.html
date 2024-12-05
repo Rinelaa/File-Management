@@ -1,0 +1,14 @@
+<div class="grid-container">
+    <div
+      class="grid-item"
+      *ngFor="let item of folderContent"
+      (click)="onFolderClick(item)"
+    >
+      <img
+        [src]="item.type === 'folder' ? 'assets/folder-icon.png' : 'assets/file-icon.png'"
+        [alt]="item.name"
+      />
+      <p>{{ item.name }}</p>
+    </div>
+  </div>
+  

@@ -1,14 +1,15 @@
 <div class="app-container">
-    <!-- Breadcrumb Navigation -->
-    <app-breadcrumb
-      [breadcrumbPath]="breadcrumbPath"
-      (folderSelected)="navigateToFolder($event)"
-    ></app-breadcrumb>
-  
-    </div>
-  
+  <!-- Breadcrumb Navigation -->
+  <app-breadcrumb
+    [breadcrumbPath]="breadcrumbPath"
+    (folderSelected)="navigateToFolder($event)"
+  ></app-breadcrumb>
 
-
-<app-folder-structure [nodes]="sampleNodes"></app-folder-structure>
+  <!-- Folder Tree -->
+  <app-folder-structure
+    [nodes]="currentFolder?.children || []"
+    (nodeSelected)="navigateToFolder($event)"
+  ></app-folder-structure>
+</div>
 
 <router-outlet></router-outlet>

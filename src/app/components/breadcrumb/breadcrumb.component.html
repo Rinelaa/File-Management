@@ -1,8 +1,13 @@
-<nav>
-    <ng-container *ngFor="let node of breadcrumbPath; let last = last">
-      <a *ngIf="!last" (click)="navigateTo(node)" class="breadcrumb-link">{{ node.name }}</a>
-      <span *ngIf="last">{{ node.name }}</span>
-      <span *ngIf="!last"> / </span>
-    </ng-container>
-  </nav>
-  
+<nav class="breadcrumb">
+  <ng-container *ngFor="let folder of breadcrumbPath; let last = last">
+    <span 
+      *ngIf="!last" 
+      class="breadcrumb-item" 
+      (click)="onFolderClick(folder)">
+      {{ folder.name }}
+    </span>
+    <span *ngIf="last" class="breadcrumb-item active">
+      {{ folder.name }}
+    </span>
+  </ng-container>
+</nav>

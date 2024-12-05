@@ -10,12 +10,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FolderStructureComponent } from './components/folder-structure/folder-structure.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { FolderGridComponent } from './components/folder-grid/folder-grid.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FolderStructureComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    FolderGridComponent
   ],
   imports: [
     BrowserModule,

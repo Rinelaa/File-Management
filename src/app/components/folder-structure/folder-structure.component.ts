@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, } from '@angular/core';
 import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FolderService } from 'src/app/services/folder.service';
@@ -12,6 +12,9 @@ import { FileNode } from 'src/app/models/file-node';
 })
 export class FolderStructureComponent implements OnInit {
   @Input() nodes: FileNode[] = [];
+
+  @Output() nodeSelected = new EventEmitter<FileNode>();
+  
   
   treeControl: FlatTreeControl<FileNode>;
   treeFlattener: MatTreeFlattener<FileNode, any>;
@@ -50,4 +53,11 @@ export class FolderStructureComponent implements OnInit {
   }
 
   hasChild = (_: number, node: FileNode) => node.type === 'folder';
+
+onNodeClick(node: FileNode) {
+  console.log('Node clicked:', node); // Debug
+  this.nodeSelected.emit(node);
 }
+}
+
+

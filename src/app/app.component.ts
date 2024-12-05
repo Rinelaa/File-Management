@@ -18,29 +18,28 @@ export class AppComponent implements OnInit {
   constructor(private folderService: FolderService) {}
 
   ngOnInit() {
-    this.folderService.getFolders().subscribe((data: any) => {
+    this.folderService.getFolders().subscribe((data: FileNode[]) => {
       console.log('Përgjigjja nga API-ja:', data);
-  
+      this.sampleNodes = data;
       // Kontrollo nëse data.folders ekziston dhe caktoje
-      if (data && data.folders && data.folders.length > 0) {
-        this.sampleNodes = data.folders;
-        this.currentFolder = this.sampleNodes[0]; // Root folder
-        this.breadcrumbPath = [this.currentFolder];
-        console.log('Sample Nodes:', this.sampleNodes);
-      } else {
-        console.error('Nuk ka foldera për të shfaqur');
+      if (this.sampleNodes.length > 0) {
+        this.currentFolder = this.sampleNodes[0]; // Fillo me folderin kryesor
+        this.breadcrumbPath = [this.currentFolder]; // Inicializo rrugën e breadcrumb
+        console.log('Initialized Breadcrumb Path:', this.breadcrumbPath); // Debug
       }
     });
   }
   
   navigateToFolder(folder: FileNode) {
     this.currentFolder = folder;
-    const index = this.breadcrumbPath.indexOf(folder);
-    if (index === -1) {
-      this.breadcrumbPath.push(folder);
-    } else {
+  
+    // Përditëso breadcrumbPath bazuar te folder-i
+    const index = this.breadcrumbPath.findIndex((f) => f.id === folder.id);
+    if (index !== -1) {
       this.breadcrumbPath = this.breadcrumbPath.slice(0, index + 1);
+    } else {
+      this.breadcrumbPath.push(folder);
     }
-    console.log('Updated Breadcrumb Path:', this.breadcrumbPath); // Debug log
+    console.log('Updated Breadcrumb Path:', this.breadcrumbPath);
   }
 }

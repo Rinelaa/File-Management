@@ -1,0 +1,18 @@
+.breadcrumb {
+    display: flex;
+    gap: 5px;
+    font-size: 14px;
+  }
+  
+  .breadcrumb-item {
+    cursor: pointer;
+    color: blue;
+    text-decoration: underline;
+  }
+  
+  .breadcrumb-item.active {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+  
