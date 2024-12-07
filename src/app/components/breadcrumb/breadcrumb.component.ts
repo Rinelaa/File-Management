@@ -11,7 +11,8 @@ export class BreadcrumbComponent {
   @Input() breadcrumbPath: FileNode[] = [];
   @Output() folderSelected = new EventEmitter<FileNode>();
 
-  onFolderClick(folder: FileNode) {
+  onFolderClick(folder: FileNode ,index:number) :void {
+    this.breadcrumbPath = this.breadcrumbPath.slice(0, index + 1);
     this.folderSelected.emit(folder);
   }
 }

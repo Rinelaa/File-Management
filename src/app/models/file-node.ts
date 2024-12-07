@@ -5,5 +5,7 @@ export interface FileNode {
   size?: string;
   children?: FileNode[];
   level?: number;
+  status?: string; // Status është opsional
+  dateModified?: string; 
   expandable?: boolean; // Shtohet këtu
 }

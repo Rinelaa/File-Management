@@ -2,3 +2,19 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.grid-item {
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .fa-folder {
+    color: #f4c430; /* Ngjyra e artë për dosjet */
+    font-size: 24px;
+  }
+  
+  .fa-file {
+    color: #007bff; /* Ngjyra blu për file-t */
+    font-size: 24px;
+  }
+  

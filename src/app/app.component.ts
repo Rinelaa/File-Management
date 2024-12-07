@@ -30,15 +30,17 @@ export class AppComponent implements OnInit {
     });
   }
   
-  navigateToFolder(folder: FileNode) {
-    this.currentFolder = folder;
-  
-    // Përditëso breadcrumbPath bazuar te folder-i
-    const index = this.breadcrumbPath.findIndex((f) => f.id === folder.id);
-    if (index !== -1) {
-      this.breadcrumbPath = this.breadcrumbPath.slice(0, index + 1);
-    } else {
-      this.breadcrumbPath.push(folder);
+  navigateToFolderOrFile(item: FileNode): void {
+    if (item.type === 'folder') {
+      // Kur klikohet një folder, zëvendëso gjithçka pas RootFolder-it dhe subfolder-it të selektuar
+      this.breadcrumbPath = [this.sampleNodes[0], item];
+      this.currentFolder = item; // Përditëso currentFolder për të shfaqur përmbajtjen e tij
+    } else if (item.type === 'file') {
+      // Kur klikohet një file, shto file-in pas subfolder-it aktual në breadcrumb
+      if (this.breadcrumbPath.length === 2) {
+        this.breadcrumbPath[1] = this.currentFolder!;
+      }
+      this.breadcrumbPath[2] = item; // Shto file-in si element i fundit në breadcrumb
     }
     console.log('Updated Breadcrumb Path:', this.breadcrumbPath);
   }

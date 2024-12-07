@@ -4,20 +4,51 @@
       "id": 1,
       "name": "Root Folder",
       "type": "folder",
-      "expandable": true,
+      "status": "Available",
+      "dateModified": "12/20/2023",
+      "icon": "folder",
       "children": [
         {
           "id": 2,
           "name": "Subfolder 1",
           "type": "folder",
-          "expandable": true,
+          "icon": "folder",
+          "status": "Available",
+      "dateModified": "12/19/2023",
           "children": [
             {
               "id": 3,
               "name": "File 1.txt",
               "type": "file",
-              "expandable": false,
-              "size": "12 KB"
+              "status": "Available",
+      "dateModified": "12/20/2023",
+              "icon": "text-file"
+            },
+            {
+              "id": 4,
+              "name": "File 2.pdf",
+              "type": "file",
+              "status": "Available",
+      "dateModified": "12/19/2023",
+              "icon": "pdf-file"
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "name": "Subfolder 2",
+          "type": "folder",
+          "icon": "folder",
+          "status": "Available",
+          "dateModified": "12/19/2023",
+          "children": [
+            {
+              "id": 6,
+              "name": "File 3.docx",
+              "type": "file",
+              "status": "Available",
+      "dateModified": "12/19/2023",
+              "icon": "word-file"
             }
           ]
         }

@@ -3,7 +3,7 @@
   <div class="breadcrumb-container">
     <app-breadcrumb
       [breadcrumbPath]="breadcrumbPath"
-      (folderSelected)="navigateToFolder($event)"
+      (folderSelected)="navigateToFolderOrFile($event)"
     ></app-breadcrumb>
   </div>
 
@@ -12,7 +12,7 @@
     <div class="sidebar">
       <app-folder-structure
         [nodes]="currentFolder?.children || []"
-        (nodeSelected)="navigateToFolder($event)"
+        (nodeSelected)="navigateToFolderOrFile($event)"
       ></app-folder-structure>
     </div>
 
@@ -20,7 +20,7 @@
     <div class="main-content">
       <app-folder-grid
         [folderContent]="currentFolder?.children || []"
-        (folderOpened)="navigateToFolder($event)"
+        (folderOpened)="navigateToFolderOrFile($event)"
       ></app-folder-grid>
     </div>
   </div>

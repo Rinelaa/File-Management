@@ -1,14 +1,38 @@
 <div class="grid-container">
-    <div
-      class="grid-item"
-      *ngFor="let item of folderContent"
-      (click)="onFolderClick(item)"
-    >
-      <img
-        [src]="item.type === 'folder' ? 'assets/folder-icon.png' : 'assets/file-icon.png'"
-        [alt]="item.name"
-      />
-      <p>{{ item.name }}</p>
-    </div>
-  </div>
-  
+  <table class="file-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Date Modified</th>
+        <th>Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let item of folderContent"
+        (click)="onFolderClick(item)"
+        [class.is-folder]="item.type === 'folder'"
+        [class.is-file]="item.type === 'file'"
+      >
+        <td>
+          <i
+            [class.fa]="true"
+            [class.fa-folder]="item.type === 'folder'"
+            [class.fa-file-alt]="item.type === 'file'"
+          ></i>
+          {{ item.name }}
+        </td>
+        <td>
+          {{ item.status || 'Available' }} <!-- Vlera fallback -->
+        </td>
+        <td>
+          {{ item.dateModified || 'N/A' }} <!-- Vlera fallback -->
+        </td>
+        <td>
+          {{ item.type }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

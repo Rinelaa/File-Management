@@ -15,4 +15,11 @@ export class FolderGridComponent {
       this.folderOpened.emit(folder);
     }
   }
+  getStatus(node:FileNode): string{
+    return node.status || 'Available';
+  }
+
+  getDateModified(node:FileNode): string{
+    return node.dateModified || 'N/A';
+  }
 }
