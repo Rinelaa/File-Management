@@ -1,24 +1,25 @@
 .breadcrumb {
-    display: flex;
-    align-items:center;
-    font-size:16px;
-    padding:10px 0;
-    gap: 8px;
-  
-  }
-  
-  .breadcrumb-item {
-    cursor: pointer;
-    color:#000;
-    text-decoration: none;
-  }
-  .breadcrumb-item:hover {
-    text-decoration: underline; /* Opsionale: thekso linkun kur lëviz miun mbi të */
-  }
-  
-  .breadcrumb-item.active {
-    font-weight: bold;
-    color: #333;
-    cursor:default;
-  }
-  
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.breadcrumb-item.active {
+  font-weight: bold;
+  cursor: default;
+}
+
+.breadcrumb-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}

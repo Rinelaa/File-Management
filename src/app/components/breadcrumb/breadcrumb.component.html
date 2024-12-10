@@ -1,12 +1,38 @@
 <nav class="breadcrumb">
-  <ng-container *ngFor="let folder of breadcrumbPath; let i  = index">
+  <ng-container *ngFor="let folder of breadcrumbPath; let i = index">
     <span 
-      *ngIf="i < breadcrumbPath.length -1" 
+      *ngIf="i < breadcrumbPath.length - 1" 
       class="breadcrumb-item" 
       (click)="onFolderClick(folder, i)">
+      <img
+        *ngIf="folder.type === 'folder'"
+        src="assets/folder-icon.png"
+        alt="Folder Icon"
+        class="breadcrumb-icon"
+      />
+      <img
+        *ngIf="folder.type === 'file'"
+        src="assets/file-icon.png"
+        alt="File Icon"
+        class="breadcrumb-icon"
+      />
       {{ folder.name }}
     </span>
-    <span *ngIf="i ===breadcrumbPath.length - 1" class="breadcrumb-item active">
+    <span 
+      *ngIf="i === breadcrumbPath.length - 1" 
+      class="breadcrumb-item active">
+      <img
+        *ngIf="folder.type === 'folder'"
+        src="assets/folder-icon.png"
+        alt="Folder Icon"
+        class="breadcrumb-icon"
+      />
+      <img
+        *ngIf="folder.type === 'file'"
+        src="assets/file-icon.png"
+        alt="File Icon"
+        class="breadcrumb-icon"
+      />
       {{ folder.name }}
     </span>
   </ng-container>
