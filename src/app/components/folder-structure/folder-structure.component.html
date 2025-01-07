@@ -4,6 +4,12 @@
     <span (click)="onNodeClick(node)">{{ node.name }}</span>
     <mat-icon>{{ node.type === 'folder' ? 'folder' : 'description' }}</mat-icon>
     {{ node.name }}
+    <button mat-icon-button (click)="updateFolder(node); $event.stopPropagation()">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-icon-button (click)="deleteFolder(node); $event.stopPropagation()">
+      <mat-icon>delete</mat-icon>
+    </button>
   </mat-tree-node>
 
   <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodeToggle>

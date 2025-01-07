@@ -23,7 +23,18 @@
         (folderOpened)="navigateToFolderOrFile($event)"
       ></app-folder-grid>
     </div>
-  </div>
-</div>
 
+    <div class="folder-actions">
+      <ul>
+        <li *ngFor="let item of currentFolder?.children">
+          <span>{{ item.name }}</span>
+          <button (click)="createNewItem(item)">Add</button>
+          <button (click)="renameItem(item.id, 'New Name')">Rename</button>
+          <button (click)="deleteItem(item, currentFolder)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
+</div>
 <router-outlet></router-outlet>

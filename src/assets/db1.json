@@ -1,0 +1,42 @@
+{
+    "register": [
+      
+      {
+        "id": "dfb1",
+        "fname": "Jonh",
+        "lname": "Doe",
+        "email": "jonhdoe@gmail.com",
+        "phone number": "+456733456",
+        "password": "123",
+        "role": "user"
+      },
+      {
+        "id": "69ff",
+        "fname": "Emili",
+        "lname": "Doe",
+        "email": "doeemili@gmail.com",
+        "phone number": "+355692856134",
+        "password": "123",
+        "role": "user"
+      },
+      {
+        "id": "deb1",
+        "fname": "Era",
+        "lname": "Doe",
+        "email": "era.doe@gmail.com",
+        "phone number": "+355692866179",
+        "password": "era12",
+        "role": "user"
+      },
+      
+      {
+        "id": "1adc",
+        "fname": "Rinela",
+        "lname": "Dingozi",
+        "email": "rinela.dingozi@gmail.com",
+        "phone number": "+355692866179",
+        "password": "12345678",
+        "role": "admin"
+      }
+    ]
+  }

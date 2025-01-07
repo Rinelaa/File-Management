@@ -1,0 +1,65 @@
+{
+  "folders": [
+    {
+      "id": "1",
+      "name": "Root Folder",
+      "type": "folder",
+      "status": "Available",
+      "dateModified": "2023-12-20",
+      "expandable": true,
+      "children": [
+        {
+          "id": 2,
+          "name": "Subfolder 1",
+          "type": "folder",
+          "status": "Available",
+          "dateModified": "2023-12-19",
+          "expandable": true,
+          "parentId": 1,
+          "children": [
+            {
+              "id": 3,
+              "name": "File 1.txt",
+              "type": "file",
+              "size": "15 KB",
+              "status": "Available",
+              "dateModified": "2023-12-20",
+              "parentId": 2
+            }
+          ]
+        },
+        {
+          "id": 7,
+          "name": "New Subfolder",
+          "type": "folder",
+          "status": "Available",
+          "dateModified": "2023-12-20",
+          "expandable": true,
+          "parentId": 1,
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "df0e",
+      "name": "test",
+      "type": "folder",
+      "children": [],
+      "parentId": 2
+    },
+    {
+      "id": "cb84",
+      "name": "test2",
+      "type": "folder",
+      "children": [],
+      "parentId": 7
+    },
+    {
+      "id": "0099",
+      "name": "Images",
+      "type": "folder",
+      "children": [],
+      "parentId": 2
+    }
+  ]
+}

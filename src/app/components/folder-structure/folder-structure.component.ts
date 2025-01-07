@@ -3,18 +3,34 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { FolderService } from 'src/app/services/folder.service';
 import { FileNode } from 'src/app/models/file-node';
+import { MatIconModule } from '@angular/material/icon';
+import { MatTreeModule } from '@angular/material/tree';
+import { MatButtonModule } from '@angular/material/button';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
   selector: 'app-folder-structure',
   templateUrl: './folder-structure.component.html',
   styleUrls: ['./folder-structure.component.css'],
+  standalone: true,
+  imports: [CommonModule, MatTreeModule, MatIconModule, MatButtonModule] 
 })
 export class FolderStructureComponent implements OnInit {
   @Input() nodes: FileNode[] = [];
 
   @Output() nodeSelected = new EventEmitter<FileNode>();
-  
+
+  @Output() folderRenamed = new EventEmitter<FileNode>();
+@Output() folderDeleted = new EventEmitter<FileNode>();
+
+updateFolder(folder: FileNode) {
+  this.folderRenamed.emit(folder);
+}
+
+deleteFolder(folder: FileNode) {
+  this.folderDeleted.emit(folder);
+}
   
   treeControl: FlatTreeControl<FileNode>;
   treeFlattener: MatTreeFlattener<FileNode, any>;

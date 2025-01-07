@@ -21,3 +21,64 @@
   width: 75%; /* Pjesa e djathtë (main-content) */
   padding: 10px;
 }
+
+/* Përgjithësi për seksionin e butonave */
+.folder-actions {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f9f9f9; /* Ngjyrë e lehtë për sfond */
+  border: 1px solid #ddd; /* Kufizim i lehtë */
+  border-radius: 5px; /* Cepa të rrumbullakët */
+}
+
+/* Organizimi i listës së elementeve */
+.folder-actions ul {
+  list-style-type: none; /* Hiq pikat nga lista */
+  padding: 0;
+}
+
+.folder-actions li {
+  display: flex; /* Organizim horizontal */
+  align-items: center; /* Qendrim vertikal në mes */
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.folder-actions li:last-child {
+  border-bottom: none; /* Heq kufirin te elementi i fundit */
+}
+
+/* Stilizimi i butonave */
+.folder-actions button {
+  margin-left: 10px; /* Hapësirë ndërmjet butonave */
+  padding: 5px 10px;
+  background-color: #007bff; /* Ngjyra blu */
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+}
+
+.folder-actions button:hover {
+  background-color: #0056b3; /* Ngjyrë më e errët për hover */
+}
+
+.folder-actions button:nth-child(2) {
+  background-color: #ffc107; /* Ngjyrë e verdhë për "Rename" */
+}
+
+.folder-actions button:nth-child(2):hover {
+  background-color: #e0a800;
+}
+
+.folder-actions button:nth-child(3) {
+  background-color: #dc3545; /* Ngjyrë e kuqe për "Delete" */
+}
+
+.folder-actions button:nth-child(3):hover {
+  background-color: #c82333;
+}
+

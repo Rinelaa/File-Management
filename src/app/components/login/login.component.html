@@ -1,0 +1,37 @@
+
+<div class="container">
+    <form [formGroup]="login" (ngSubmit)="logindata()" class="form-box">
+      <h2>Login</h2>
+  
+      <div class="form-group">
+        <label> User Name</label>
+        <input type="text" formControlName="fname" class="form-control mb-3 mt-3" placeholder="Enter User name" />
+        <div *ngIf="login.get('fname')?.invalid && login.get('fname')?.touched">
+          <small *ngIf="login.get('fname')?.errors?.['required']" class="text-danger">Required</small>
+          <small *ngIf="login.get('fname')?.errors?.['pattern']" class="text-danger">Use only alphanumeric characters</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" formControlName="password" class="form-control mb-3 mt-3" placeholder="Enter Password" />
+        <div *ngIf="login.get('password')?.invalid && login.get('password')?.touched">
+          <small *ngIf="login.get('password')?.errors?.['required']" class="text-danger">Required</small>
+          <small *ngIf="login.get('password')?.errors?.['minlength']" class="text-danger">Password must contain more than 8 characters</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label>Role</label>
+        <select formControlName="role" class="form-control mb-3 mt-3">
+          <option value="user">Simple User</option>
+          <option value="admin">Admin</option>
+        </select>
+      </div>
+      <p>Don't have an account? <a routerLink="/register">Register here</a></p>
+      <button type="submit" class="btn btn-success">Login</button>
+    </form>
+  </div>
+  
+  <!--<router-outlet></router-outlet>-->
+  
